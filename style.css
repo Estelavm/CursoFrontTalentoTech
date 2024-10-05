@@ -1,0 +1,150 @@
+:root {
+    --font-family-header: "Playfair Display", serif;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-family-footer: "Lato", sans-serif;
+    --background-color-header: linear-gradient(135deg, rgba(245, 166, 35, 0.8) 0%, rgba(245, 166, 35, 0.5) 100%);
+    --background-color-list: #E05A47;
+    --background-color-footer: #8C564B;
+    --background-color-general: #FFF8E7; /* Beige suave */
+    --color-text: #333333;
+    --border-radius-links: 3px; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-header);
+    font-weight: var(--font-weight-normal);
+}
+
+body {
+    background-color: var(--background-color-general);
+    color: var(--color-text);
+}
+header {
+    font-family: var(--font-family-header);
+    font-weight: var(--font-weight-bold);
+    background: var(--background-color-header);
+    color: var(--color-text);
+    width: 100%;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Espacia el h1 y el resto */
+    align-items: center; /* Centra verticalmente */
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    align-items: center; 
+    list-style-type: none;
+}
+
+li {
+    display: inline-block; 
+}
+
+li:nth-child(2) {
+    margin-right: 40vw; 
+}
+
+.Logo a{
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.Links a{
+    text-decoration: none;
+    background-color: var(--background-color-list);
+    margin: 10px;
+    border-radius: var(--border-radius-links);
+    color: white;
+}
+
+main {
+    display: flex; /* Asegúrate de que el contenido esté bien alineado */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    min-height: 100vh; /* Hace que el main ocupe el 100% de la altura de la ventana */
+    background-image: url('./Images/Background_Image.jpeg'); /* Asegúrate de cambiar la ruta */
+    background-size: cover; /* Cubre todo el espacio disponible */
+    background-position: center; /* Centra la imagen */
+    position: relative; /* Para permitir la superposición de un color de fondo */
+}
+
+/* Añadir un color de fondo semitransparente */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Color blanco con 50% de opacidad */
+    z-index: 1; /* Asegura que el color de fondo esté sobre la imagen */
+}
+
+.video-container {
+    width: 50vw;
+    height: auto;
+    margin: 0 auto;
+    z-index: 2;
+}
+.video {
+    overflow: hidden;
+    z-index: 2;
+}
+
+.Form {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    display: flex;
+    margin-top: 20vh;
+    z-index: 2;
+    width: 80%;
+}
+
+.Form form {
+    width: 100%;
+    max-width: 40%; /* Limita el ancho del formulario */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados para mejorar el diseño */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
+.Form label,
+.Form input,
+.Form textarea,
+.Form button {
+    display: block; /* Hace que cada elemento ocupe toda la línea */
+    width: 90%; /* Hace que los inputs y textarea ocupen el 100% del contenedor */
+    margin-bottom: 10px; /* Añade espacio entre los elementos */
+}
+
+.Form input,
+.Form textarea {
+    padding: 8px; /* Añade algo de padding para mejorar la apariencia */
+    font-size: 1rem;
+}
+
+.Form button {
+    padding: 10px;
+    background-color: var(--background-color-list);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    font-family: var(--font-family-footer);
+    background-color: var(--background-color-footer);
+    color: white;
+}

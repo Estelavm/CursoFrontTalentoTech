@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Título</h1>
-    </header>  
-    <nav>
-        <ul>
-            <li>
-                <img src="./Images/Logo.png" alt="Logo de la marca.">
-            </li>
-            <li>
-                <a href="/">Inicio</a>
-            </li>
-            <li>
-                <a href="/">Productos</a>
-            </li>
-            <li>
-                <a href="/">Contacto</a>
-            </li>
-        </ul>
-    </nav> 
+    <header>    
+        <nav>
+            <ul>
+                <li class="Logo">
+                    <img src="./Images/Logo.png" alt="Logo de la marca.">
+                </li>
+                <li class="Links">
+                    <h1 class="nav-title">Título</h1>
+                </li>
+                <li class="Links">
+                    <a href="/">Inicio</a>
+                </li>
+                <li class="Links">
+                    <a href="/">Productos</a>
+                </li>
+                <li class="Links">
+                    <a href="/">Contacto</a>
+                </li>
+            </ul>
+        </nav> 
+    </header> 
     <main>
-        <video src="./Images/video.mp4" controls></video>
-        <section>
+        <div class="video">
+            <video src="./Images/video.mp4" controls></video>
+        </div>
+        <section class="Form">
             <form action="https://formspree.io/f/meojblol" method="POST">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" placeholder="Escriba su nombre aquí">
@@ -39,6 +47,8 @@
             </form>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <p>© 2024. Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
