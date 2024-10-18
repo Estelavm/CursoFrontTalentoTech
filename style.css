@@ -129,6 +129,29 @@ main::before {
     flex: 1 1 200px;
     box-sizing: border-box;
 }
+
+.opiniones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20vw, 1fr));
+    grid-template-rows: auto 1fr;
+    gap: 5vw;
+    width: 100vw;
+    overflow: hidden;
+    padding: 5%;
+    justify-items: center;
+    z-index: 2;
+}
+
+.card{ 
+    padding: 2%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .Form {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
@@ -174,4 +197,10 @@ footer {
     font-family: var(--font-family-footer);
     background-color: var(--background-color-footer);
     color: white;
+}
+
+@media (max-width: 768px) {
+    .opiniones {
+        grid-template-columns: 1fr;
+    }
 }
