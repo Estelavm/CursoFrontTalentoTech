@@ -29,7 +29,7 @@ body {
 header {
     font-family: var(--font-family-header);
     font-weight: var(--font-weight-bold);
-    background-image: url('./Images/Background_Image.jpeg');
+    background-image: url('../Images/Background_Image.jpeg');
     background-size: cover; 
     background-position: center; 
     color: var(--color-text);
