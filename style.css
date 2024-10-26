@@ -1,12 +1,14 @@
 :root {
     --font-family-header: "Playfair Display", serif;
+    --font-family-marca: "Dancing Script", cursive;
+    --font-family-main: "Montserrat", sans-serif;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-family-footer: "Lato", sans-serif;
     --background-color-header: linear-gradient(135deg, rgba(245, 166, 35, 0.8) 0%, rgba(245, 166, 35, 0.5) 100%);
-    --background-color-list: #E05A47;
+    --background-color-list: rgba(255, 255, 255, 0.2);
     --background-color-footer: #8C564B;
-    --background-color-general: #FFF8E7; /* Beige suave */
+    --background-color-general: #FFF8E7; 
     --color-text: #333333;
     --border-radius-links: 3px; 
 }
@@ -23,78 +25,128 @@ body {
     background-color: var(--background-color-general);
     color: var(--color-text);
 }
+
 header {
     font-family: var(--font-family-header);
     font-weight: var(--font-weight-bold);
-    background: var(--background-color-header);
+    background-image: url('./Images/Background_Image.jpeg');
+    background-size: cover; 
+    background-position: center; 
     color: var(--color-text);
     width: 100%;
     overflow: hidden;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between; /* Espacia el h1 y el resto */
-    align-items: center; /* Centra verticalmente */
-    width: 100%;
-}
-
-ul {
-    display: flex;
-    align-items: center; 
-    list-style-type: none;
-}
-
-li {
-    display: inline-block; 
-}
-
-li:nth-child(2) {
-    margin-right: 40vw; 
-}
-
-.Logo img{
-    text-decoration: none;
-    margin-right: auto;
-    height: 4vh;
-    width: auto;
-}
-
-.Links h1 {
-    margin-left: 30vw;
-}
-
-.Links a{
-    text-decoration: none;
-    background-color: var(--background-color-list);
-    margin: 10px;
-    border-radius: var(--border-radius-links);
-    color: white;
-}
-
-main {
-    display: flex; /* Asegúrate de que el contenido esté bien alineado */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 5%;
-    min-height: 100vh; /* Hace que el main ocupe el 100% de la altura de la ventana */
-    background-image: url('./Images/Background_Image.jpeg'); /* Asegúrate de cambiar la ruta */
-    background-size: cover; /* Cubre todo el espacio disponible */
-    background-position: center; /* Centra la imagen */
-    position: relative; /* Para permitir la superposición de un color de fondo */
 }
 
-/* Añadir un color de fondo semitransparente */
-main::before {
+nav::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* Color blanco con 50% de opacidad */
-    z-index: 1; /* Asegura que el color de fondo esté sobre la imagen */
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: 1; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.menu-toggle {
+    display: none; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;
+}
+
+#nav-links li {
+    margin: 0 10px;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    z-index: 2;
+    height: auto;
+}
+
+.Logo img{
+    text-decoration: none;
+    height: 8vh;
+    width: auto;
+}
+
+.Logo span {
+    font-family: var(--font-family-marca);
+    width: max-content;
+    font-weight: var(--font-weight-bold);
+    font-size: larger;
+}
+
+ul {
+    display: flex;
+    align-items: center; 
+    list-style-type: none;
+    z-index: 2;
+    margin-left: auto;
+}
+
+li {
+    display: inline-block; 
+}
+
+.Links a{
+    text-decoration: none;
+    background-color: var(--background-color-list);
+    font-family: var(--font-family-header);
+    margin: 10px;
+    border-radius: var(--border-radius-links);
+    font-size: 16px; 
+    font-weight: 500; 
+    color: #000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s; 
+    padding: 5px 10px; 
+}
+
+main {
+    font-family: var(--font-family-main);
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    min-height: 100vh; 
+    background: var(--background-color-header);
+    position: relative; 
+    z-index: 2;
+}
+
+.presentacion {
+    border-bottom: 2px solid #ddd;
+    width: 100%;
+}
+
+.presentacion-texto {
+    font-size: 1.2rem; 
+    color: #333; 
+    text-align: center; 
+    max-width: 80vw; 
+    margin-bottom: 4vh;
 }
 
 .video-container {
@@ -102,7 +154,6 @@ main::before {
     height: auto;
     max-width: 100%;
     margin: 0 auto;
-    z-index: 2;
     overflow: hidden;
 }
 
@@ -112,22 +163,33 @@ main::before {
     display: block;
 }
 
+h1 {
+    margin-top: 15vh;
+} 
+
 .productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    margin-top: 15vh;
-    z-index: 2;
+    border-bottom: 2px solid #ddd;
 }
 
 .producto {
     background-color: var(--background-color-list);
-    color: white;
+    color: black;
     padding: 20px;
     margin: 10px;
-    flex: 1 1 200px;
+    flex: 1 1 300px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%; 
+    height: 40vh; 
+    display: block; 
+    margin: 0 auto; 
 }
 
 .opiniones {
@@ -140,11 +202,31 @@ main::before {
     padding: 5%;
     justify-items: center;
     z-index: 2;
+    border-bottom: 2px solid #ddd;
+}
+
+.titulo-reseñas, .parrafo-reseñas {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .card{ 
+    background-color: white; 
+    border-radius: 8px;
     padding: 2%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px; 
+    text-align: center; 
+    overflow: hidden;
+}
+
+.titulo-reseñas {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .card:hover {
@@ -152,36 +234,60 @@ main::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.card img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    margin-bottom: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-family: var(--font-family-main); 
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--color-text);
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.titulo-form {
+    margin-top: 5vh;
+}
+
 .Form {
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center; 
     display: flex;
-    margin-top: 20vh;
-    z-index: 2;
     width: 80%;
+    margin-top: 5vh;
 }
 
 .Form form {
     width: 100%;
-    max-width: 40%; /* Limita el ancho del formulario */
-    padding: 20px;
+    max-width: 40vw; 
+    padding: 50px;
     background-color: white;
-    border-radius: 8px; /* Bordes redondeados para mejorar el diseño */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .Form label,
 .Form input,
 .Form textarea,
 .Form button {
-    display: block; /* Hace que cada elemento ocupe toda la línea */
-    width: 90%; /* Hace que los inputs y textarea ocupen el 100% del contenedor */
-    margin-bottom: 10px; /* Añade espacio entre los elementos */
+    display: block; 
+    width: 90%; 
+    margin-bottom: 10px; 
 }
 
 .Form input,
 .Form textarea {
-    padding: 8px; /* Añade algo de padding para mejorar la apariencia */
+    padding: 8px; 
     font-size: 1rem;
 }
 
@@ -202,5 +308,33 @@ footer {
 @media (max-width: 768px) {
     .opiniones {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #nav-links {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 50px; 
+        right: 0; 
+        background-color: white; 
+        width: 100%; 
+    }
+
+    #nav-links.show {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    .Form {
+        width: 100%;
+    }
+
+    .Form form {
+        max-width: 80vw; 
     }
 }

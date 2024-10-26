@@ -6,78 +6,100 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
     <header>    
         <nav>
-            <ul>
-                <li class="Logo">
-                    <img src="./Images/Logo.png" alt="Logo de la marca.">
+            <div class="Logo">
+                <img src="./Images/Logo.png" alt="Logo de la marca">
+                <span>Delicias del Alma</span>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">
+                &#9776;
+            </button>
+            <ul id="nav-links">
+                <li class="Links">
+                    <a href="#presentacion">Inicio</a>
                 </li>
                 <li class="Links">
-                    <h1 class="nav-title">Título</h1>
+                    <a href="#productos">Productos</a>
                 </li>
                 <li class="Links">
-                    <a href="/">Inicio</a>
+                    <a href="#opiniones">Reseñas</a>
                 </li>
                 <li class="Links">
-                    <a href="/">Productos</a>
-                </li>
-                <li class="Links">
-                    <a href="/">Reseñas</a>
-                </li>
-                <li class="Links">
-                    <a href="/">Contacto</a>
+                    <a href="#form">Contacto</a>
                 </li>
             </ul>
         </nav> 
     </header> 
     <main>
-        <div class="video-container">
-            <video src="./Images/video.mp4" controls class="video"></video>
-        </div>
+        <section class="presentacion" id="presentacion">
+            <p class="presentacion-texto">Bienvenido a Delicias del Alma, tu pastelería en línea donde cada bocado es un momento especial. Explora nuestros deliciosos productos y descubre la pasión por la repostería que nos impulsa a crear sabores inolvidables.</p>
+            <div class="video-container">
+                <video src="./Images/video.mp4" controls class="video"></video>
+            </div>
+        </section>  
+        <h1 id="productos">Nuestras Tortas</h1>
         <section class="productos">
             <div class="producto">
-                <img src="/" alt="">
-                <h2>Producto 1</h2>
-                <a href=""></a>
+                <img src="./Images/Chocolate-Blanco.png" alt="Torta de chocolate blanco">
+                <h2>Torta de Chocolate Blanco</h2>
+                <span>Deliciosa torta de chocolate blanco, suave y cremosa.</span>
             </div>
             <div class="producto">
-                <img src="/" alt="">
-                <h2>Producto 2</h2>
-                <a href=""></a>
+                <img src="./Images/Chocotorta.png" alt="Chocotorta">
+                <h2>Chocotorta</h2>
+                <span>Clásica torta fría de galletitas de chocolate y dulce de leche.</span>
             </div>
             <div class="producto">
-                <img src="/" alt="">
-                <h2>Producto 3</h2>
-                <a href=""></a>
+                <img src="./Images/Merengada.png" alt="Torta Merengada">
+                <h2>Torta Merengada</h2>
+                <span>Ligera y esponjosa, cubierta de merengue dulce.</span>
             </div>
             <div class="producto">
-                <img src="/" alt="">
-                <h2>Producto 4</h2>
-                <a href=""></a>
+                <img src="./Images/Mousse.png" alt="Mousse de Chocolate">
+                <h2>Mousse de Chocolate</h2>
+                <span>Postre cremoso y suave, ideal para los amantes del chocolate.</span>
+            </div>
+            <div class="producto">
+                <img src="./Images/Red-Velvet.png" alt="Torta Red Velvet">
+                <h2>Torta Red Velvet</h2>
+                <span>Torta de terciopelo rojo con un toque de chocolate y crema de queso.</span>
+            </div>
+            <div class="producto">
+                <img src="./Images/Torta-Fraiser.png" alt="Torta Fraiser">
+                <h2>Torta Fraiser</h2>
+                <span>Torta francesa de fresas, suave y fresca.</span>
             </div>
         </section>
-        <section class="opiniones">
+        
+        <h2 class="titulo-reseñas">Opiniones de Nuestros Clientes</h2>
+        <p class="parrafo-reseñas">Nos enorgullece contar con la satisfacción de nuestros clientes. A continuación, compartimos algunas de las opiniones de quienes ya han disfrutado de nuestras delicias.</p>
+        <section class="opiniones" id="opiniones">
             <div class="card">
-                <img src="/" alt="">
-                <h2>Reseña 1</h2>
-                <a href=""></a>
+                <img src="./Images/cliente1.jpg" alt="Foto de Ana Pérez">
+                <h3>Ana Pérez</h3>
+                <p>"Las tortas son espectaculares, frescas y de un sabor único. La atención también fue de primera, realmente recomendable!"</p>
             </div>
             <div class="card">
-                <img src="/" alt="">
-                <h2>Reseña 2</h2>
-                <a href=""></a>
+                <img src="./Images/cliente2.jpg" alt="Foto de Carlos López">
+                <h3>Carlos López</h3>
+                <p>"La chocotorta fue un éxito en mi fiesta. Muy contento con la calidad de los productos, todo llegó a tiempo y en perfectas condiciones."</p>
             </div>
             <div class="card">
-                <img src="/" alt="">
-                <h2>Reseña 3</h2>
-                <a href=""></a>
+                <img src="./Images/cliente3.jpg" alt="Foto de Mariana Gómez">
+                <h3>Mariana Gómez</h3>
+                <p>"Pedí la torta de chocolate blanco y fue un verdadero manjar. La presentación es impecable y el sabor, inigualable. ¡Gracias Delicias del Alma!"</p>
             </div>
         </section>
-        <section class="Form">
+        <h2 class="titulo-form">Contáctanos</h2>
+        <p>Si tienes preguntas, sugerencias o deseas realizar un pedido, no dudes en enviarnos un mensaje. Estamos aquí para ayudarte y hacer que tu experiencia con nuestras delicias sea inolvidable.</p>
+        <section class="Form" id="form">
             <form action="https://formspree.io/f/meojblol" method="POST">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" placeholder="Escriba su nombre aquí">
