@@ -277,17 +277,21 @@ h1 {
 }
 
 .Form {
+    display: flex;
     justify-content: center; 
     align-items: center; 
-    display: flex;
+    flex-direction: column;
     width: 80%;
-    margin-top: 5vh;
+    margin-top: 5vh auto;
 }
 
 .Form form {
+    display: flex; 
     width: 100%;
     max-width: 40vw; 
     padding: 50px;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
     border-radius: 8px; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
@@ -309,11 +313,32 @@ h1 {
 }
 
 .Form button {
-    padding: 10px;
-    background-color: var(--background-color-list);
-    color: white;
-    border: none;
-    cursor: pointer;
+    width: 50%;
+    align-self: center;
+    padding: 12px 5px; 
+    background-color: var(--background-color-list); 
+    color: black; 
+    border: 2px solid #a355c0; 
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: bold; 
+    font-size: 16px; 
+    cursor: pointer; 
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease-in-out; 
+}
+
+.Form button:hover {
+    background-color: #a355c0; 
+    color: #ffffff; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05); 
+}
+
+.Form button:active {
+    transform: scale(0.95); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 footer {
