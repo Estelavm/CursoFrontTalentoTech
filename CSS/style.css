@@ -187,19 +187,29 @@ h1 {
 .productos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+    gap: 20px;
+    justify-content: center;
     border-bottom: 2px solid #ddd;
 }
 
 .producto {
+    display: flex;
     background-color: var(--background-color-list);
     color: black;
+    flex-direction: column;
     padding: 20px;
     margin: 10px;
     flex: 1 1 300px;
     box-sizing: border-box;
     text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    padding: 15px;
+    min-height: 450px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .producto img {
@@ -207,6 +217,33 @@ h1 {
     height: 40vh; 
     display: block; 
     margin: 0 auto; 
+}
+
+.btn-descripcion {
+    margin-top: auto;
+    padding: 10px 15px;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-descripcion:hover {
+    background-color: #5849d8;
+}
+
+.descripcion-ampliada {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .opiniones {
