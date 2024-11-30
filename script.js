@@ -49,12 +49,11 @@ const productos = [
 
 // Mostrar los productos en la página
 function mostrarProductos() {
-    const contenedorProductos = document.querySelector('.productos'); // Selector del contenedor donde se van a mostrar los productos
-    contenedorProductos.innerHTML = ''; // Limpiar cualquier contenido previo en el contenedor
+    const contenedorProductos = document.querySelector('.productos'); 
+    contenedorProductos.innerHTML = ''; 
 
     // Recorremos el array de productos y generamos el HTML para cada uno
     productos.forEach(producto => {
-        // Crear el HTML de cada producto
         const productoHTML = `
             <div class="producto">
                 <img src="${producto.imagen}" alt="${producto.nombre}">
@@ -66,7 +65,6 @@ function mostrarProductos() {
             </div>
         `;
 
-        // Insertar el HTML generado en el contenedor de productos
         contenedorProductos.innerHTML += productoHTML;
     });
 
@@ -82,7 +80,7 @@ function mostrarProductos() {
 document.addEventListener('DOMContentLoaded', mostrarProductos);
 
 // Mostrar/ocultar descripción del producto
-document.addEventListener("DOMContentLoaded", () => {
+function agregarEventosDescripcion() {
     const botones = document.querySelectorAll(".btn-descripcion");
 
     botones.forEach((boton) => {
@@ -99,13 +97,68 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-});
+}
+
+const traducciones = {
+    "Apam balik": "Pancake de frijoles",
+    "Apple & Blackberry Crumble": "Crumble de manzana y mora",
+    "Apple Frangipan Tart": "Tarta de manzana y frangipane",
+    "Bakewell tart": "Tarta Bakewell",
+    "Banana Pancakes": "Panqueques de Banana",
+    "Battenberg Cake": "Pastel Battenberg"
+};
+
+function traducirNombre(nombre) {
+    return traducciones[nombre] || nombre; 
+}
 
 // Obtener los productos de la sección del HTML
-const productosDisponibles = document.querySelectorAll(".productos .producto h2");
+async function obtenerProductosSelectos() {
+    const contenedorProductosSelectos = document.querySelector('.productos_selectos');
+    try {
+        const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert');
+        if (!respuesta.ok) throw new Error('Error al obtener los datos');
+        
+        const data = await respuesta.json();
+        const productos = data.meals.slice(0, 6);
 
-// Mostrar los productos disponibles en la consola
-console.log("Lista de productos disponibles:");
-productosDisponibles.forEach((producto, index) => {
-    console.log(`${index + 1}. ${producto.textContent}`);
+        contenedorProductosSelectos.innerHTML = productos.map(producto => ` 
+            <div class="producto">
+                <img src="${producto.strMealThumb}" alt="${producto.strMeal}">
+                <h2>${traducirNombre(producto.strMeal)}</h2>
+                <button class="btn-descripcion">Ver descripción</button>
+                <div class="descripcion-ampliada">
+                    ¡Delicioso postre para disfrutar!
+                </div>
+            </div>
+        `).join('');
+
+        agregarEventosDescripcion();
+    } catch (error) {
+        console.error('Ocurrió un error:', error);
+        contenedorProductosSelectos.innerHTML = '<p>No se pudieron cargar los productos. Intenta más tarde.</p>';
+    }
+}
+
+obtenerProductosSelectos();
+
+//Menú hamburguesa
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle'); // Botón del menú
+    const navbarNav = document.getElementById('navbarNav'); // Contenedor del menú
+    const navLinks = navbarNav.querySelectorAll('a'); // Enlaces dentro del menú
+
+    // Mostrar/ocultar menú al hacer clic en el botón
+    menuToggle.addEventListener('click', () => {
+        navbarNav.classList.toggle('active');
+    });
+
+    // Ocultar menú al hacer clic en un enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbarNav.classList.remove('active');
+        });
+    });
 });
+
+
