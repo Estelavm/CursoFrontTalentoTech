@@ -24,6 +24,7 @@
 body {
     background-color: var(--background-color-general);
     color: var(--color-text);
+    overflow-x: hidden;
 }
 
 header {
@@ -70,11 +71,19 @@ nav {
 #nav-links {
     list-style: none;
     display: flex;
-    margin: 0 50vw;
 }
 
-#nav-links li {
-    margin: 0 10px;
+#nav-links li a i {
+    font-size: 20px; 
+    width: 3vw;
+    color: #ff5733;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+    text-align: center;
+    z-index: 2;
+}
+
+#nav-links li a:hover i {
+    color: #7f3d92; 
 }
 
 .Logo {
@@ -129,6 +138,10 @@ li {
     background-color: #f5a623; 
     transform: scale(1.1); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.cart a {
+    border: 2px solid #a355c0;
 }
 
 .menu-toggle {
@@ -190,6 +203,11 @@ h1 {
     gap: 20px;
     justify-content: center;
     border-bottom: 2px solid #ddd;
+    z-index: 2;
+}
+
+.productos h2 {
+    z-index: 2;
 }
 
 .producto {
@@ -219,8 +237,20 @@ h1 {
     margin: 0 auto; 
 }
 
+.precio {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .btn-descripcion {
-    margin-top: auto;
+    margin-top: 2vh;
     padding: 10px 15px;
     background-color: #6c63ff;
     color: #fff;
@@ -458,30 +488,27 @@ footer {
         flex-direction: column; 
         position: absolute;  
         right: 10px; 
-        top: 15vh; /* Ajusta el top para que el menú no se quede pegado al borde superior */
+        top: 15vh; 
         background-color: white; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
-        width: 30%; /* Establecer un ancho fijo */
-        padding: 20px 0; /* Espaciado adecuado para los elementos */
-        display: none; /* Ocultar menú por defecto */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        width: 30%; 
+        padding: 20px 0; 
+        display: none; 
     }
 
-    /* Mostrar el menú cuando se activa */
     #nav-links.show {
         display: flex; 
     }
 
-    /* Botón de menú hamburguesa */
     .menu-toggle {
         cursor: pointer;
         display: block;
-        position: absolute; /* Colocarlo en la parte superior derecha */
-        right: 10vw; /* Ajustar la distancia al borde */
+        position: absolute; 
+        right: 10vw; 
         font-size: 24px;
-        z-index: 20; /* Hacer el icono más grande */
+        z-index: 20; 
     }
 
-    /* Estilos para el formulario */
     .Form {
         width: 100%;
     }
@@ -490,12 +517,11 @@ footer {
         max-width: 80vw; 
     }
 
-    /* Estilos para el contenedor del navbar */
     #navbarNav {
         display: none;
         flex-direction: column;
         background: none;
-        width: 100%; /* Para que el contenedor ocupe el 100% del ancho */
+        width: 100%; 
         top: 10vh;
     }
 
@@ -506,20 +532,18 @@ footer {
         flex-direction: column;
         gap: 10px;
         z-index: 20;
-        padding-left: 0; /* Sin padding izquierdo */
+        padding-left: 0; 
     }
 
     #navbarNav li {
         margin: 10px 0;
     }
 
-    /* Mostrar el menú cuando está activo */
     #navbarNav.active {
         display: flex;
         z-index: 20;
     }
 
-    /* Para asegurar que el ícono de la hamburguesa sea visible en todo momento */
     .menu-toggle {
         display: block;
     }
