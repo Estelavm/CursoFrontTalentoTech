@@ -15,7 +15,7 @@ Este proyecto es una tienda en línea que permite a los usuarios explorar y hace
 
 - **HTML**: Estructura del sitio web.
 - **CSS**: Estilo y diseño del sitio web.
-- **JavaScript**: Interactividad (en caso de ser necesario).
+- **JavaScript**: Interactividad.
 - **GitHub Pages**: Hosting del sitio web.
 
 ## Link a la página
